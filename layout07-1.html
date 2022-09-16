@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout07-1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: rgb(143, 137, 177);
+        }
+
+        header {
+            height: 100px;
+            background-color: rgb(167, 176, 132);
+        }
+
+        #top-banner-section {
+            height: 200px;
+            background-color: rgb(156, 121, 129);
+        }
+
+        #top-section {
+            overflow: hidden;
+            height: 300px;
+            background-color: rgb(110, 152, 134);
+        }
+
+        #top-section>.left-menu {
+            float: left;
+            width: 20%;
+            height: 100%;
+            background-color: rgb(207, 142, 142);
+        }
+
+        #top-section>.r-article1 {
+            float: left;
+            width: 80%;
+            height: 50%;
+            background-color: rgb(140, 92, 92);
+        }
+
+        #top-section>.r-article2 {
+            float: left;
+            width: 80%;
+            height: 50%;
+            background-color: rgb(98, 55, 55);
+        }
+
+        #mid-section {
+            clear: both;
+            overflow: hidden;
+            height: 200px;
+            background-color: rgb(108, 119, 80);
+        }
+
+        #mid-section>.m-article1 {
+            float: left;
+            width: calc(100%/3);
+            height: 100%;
+            background-color: rgb(151, 198, 139);
+        }
+
+        #mid-section>.m-article2 {
+            float: left;
+            width: calc(100%/3);
+            height: 100%;
+            background-color: rgb(130, 172, 153);
+        }
+
+        #mid-section>.m-article3 {
+            float: left;
+            width: calc(100%/3);
+            height: 100%;
+            background-color: rgb(104, 158, 117);
+        }
+
+        #bottom-section {
+            clear: both;
+            overflow: hidden;
+            height: 200px;
+            background-color: rgb(109, 88, 139);
+        }
+
+        #bottom-section>.gallery {
+            margin: 10px 40px;
+            background-color: #fff;
+        }
+
+        #bottom-section>.gallery>div {
+            float: left;
+            width: 260px;
+            height: 160px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: rgb(137, 147, 202);
+        }
+
+        footer {
+            height: 100px;
+            background-color: rgb(103, 64, 64);
+        }
+
+        @media (max-width:1220px) {
+            #wrap {
+                width: 100%;
+            }
+
+            #mid-section>.m-article1,
+            #mid-section>.m-article2 {
+                width: 50%;
+            }
+
+            #bottom-section>.gallery {
+                margin: 10px 45px;
+                background-color: #fff;
+            }
+
+            #bottom-section>.gallery>div {
+                width: calc(100%/4);
+                margin-right: 30px;
+                background-color: rgb(172, 180, 228);
+            }
+
+            #bottom-section>.gallery>div:nth-child(4) {
+                display: none;
+            }
+        }
+
+        @media (max-width:768px) {
+
+            #mid-section>.m-article1,
+            #mid-section>.m-article2 {
+                width: 100%;
+                height: 100px;
+            }
+        }
+
+        @media (max-width:480px) {
+
+            #top-section>.left-menu,
+            #top-section>.r-article1,
+            #top-section>.r-article2 {
+                width: 100%;
+                height: 100px;
+            }
+
+            #bottom-section {
+                height: 565px;
+            }
+
+            #bottom-section>.gallery>div {
+                width: calc(90%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>header</header>
+        <section id="top-banner-section">top-banner</section>
+        <section id="top-section">
+            <aside class="left-menu">left-menu</aside>
+            <article class="r-article1">right article1</article>
+            <article class="r-article2">right article2</article>
+        </section>
+        <section id="mid-section">
+            <article class="m-article1">middle article1</article>
+            <article class="m-article2">middle article2</article>
+            <article class="m-article3">middle article3</article>
+        </section>
+        <section id="bottom-section">
+            <article class="gallery">
+                <div>gallery1</div>
+                <div>gallery2</div>
+                <div>gallery3</div>
+                <div>gallery4</div>
+            </article>
+        </section>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>
