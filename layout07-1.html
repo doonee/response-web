@@ -8,141 +8,132 @@
     <title>layout07-1</title>
     <style>
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
 
         body {
-            background-color: #fff;
+            background-color: rgb(89, 83, 124);
         }
 
         #wrap {
             width: 1200px;
             margin: 0 auto;
-            background-color: rgb(143, 137, 177);
+            background-color: rgb(101, 125, 98);
         }
 
-        header {
+        #header {
             height: 100px;
-            background-color: rgb(167, 176, 132);
+            background-color: rgb(121, 86, 118);
         }
 
-        #top-banner-section {
+        #banner-section {
             height: 200px;
-            background-color: rgb(156, 121, 129);
+            background-color: rgb(125, 121, 105);
         }
 
-        #top-section {
+        #content-section1 {
             overflow: hidden;
             height: 300px;
-            background-color: rgb(110, 152, 134);
+            background-color: rgb(127, 91, 108);
         }
 
-        #top-section>.left-menu {
+        #content-section1 #nav1 {
             float: left;
-            width: 20%;
-            height: 100%;
-            background-color: rgb(207, 142, 142);
+            width: 30%;
+            height: 300px;
+            background-color: rgb(141, 148, 133);
         }
 
-        #top-section>.r-article1 {
+        #content-section1 #article1 {
             float: left;
-            width: 80%;
-            height: 50%;
-            background-color: rgb(140, 92, 92);
+            width: 70%;
+            height: 150px;
+            background-color: rgb(138, 137, 137);
         }
 
-        #top-section>.r-article2 {
+        #content-section1 #article2 {
             float: left;
-            width: 80%;
-            height: 50%;
-            background-color: rgb(98, 55, 55);
+            width: 70%;
+            height: 150px;
+            background-color: rgb(121, 128, 124);
         }
 
-        #mid-section {
+        #content-section2 {
             clear: both;
             overflow: hidden;
             height: 200px;
-            background-color: rgb(108, 119, 80);
+            background-color: rgb(135, 137, 111);
         }
 
-        #mid-section>.m-article1 {
+        #content-section2 #article3 {
             float: left;
-            width: calc(100%/3);
-            height: 100%;
-            background-color: rgb(151, 198, 139);
-        }
-
-        #mid-section>.m-article2 {
-            float: left;
-            width: calc(100%/3);
-            height: 100%;
-            background-color: rgb(130, 172, 153);
-        }
-
-        #mid-section>.m-article3 {
-            float: left;
-            width: calc(100%/3);
-            height: 100%;
-            background-color: rgb(104, 158, 117);
-        }
-
-        #bottom-section {
-            clear: both;
-            overflow: hidden;
+            width: 33.3333%;
             height: 200px;
-            background-color: rgb(109, 88, 139);
+            background-color: rgb(174, 174, 141);
         }
 
-        #bottom-section>.gallery {
-            margin: 10px 40px;
-            background-color: #fff;
-        }
-
-        #bottom-section>.gallery>div {
+        #content-section2 #article4 {
             float: left;
-            width: 260px;
-            height: 160px;
-            margin: 10px;
+            width: 33.3333%;
+            height: 200px;
+            background-color: rgb(158, 139, 150);
+        }
+
+        #content-section2 #article5 {
+            float: left;
+            width: 33.3333%;
+            height: 200px;
+            background-color: rgb(135, 151, 151);
+        }
+
+        #content-section3 {
+            clear: both;
+            height: 200px;
+            display: flex;
+            /* 세로 중앙정렬 */
+            align-items: center;
+            /* 가로 중앙정렬 */
+            justify-content: center;
+            background-color: rgb(112, 130, 119);
+        }
+
+        #content-section3 .gallery-item {
+            width: 23%;
+            height: 150px;
+            margin: 1%;
             border-radius: 5px;
-            background-color: rgb(137, 147, 202);
+            background-color: rgb(73, 81, 81);
         }
 
-        footer {
+        #footer {
             height: 100px;
-            background-color: rgb(103, 64, 64);
+            background-color: rgb(171, 145, 145);
         }
 
-        @media (max-width:1220px) {
+        @media (max-width:1240px) {
             #wrap {
                 width: 100%;
             }
 
-            #mid-section>.m-article1,
-            #mid-section>.m-article2 {
+            #content-section2 #article3,
+            #content-section2 #article4 {
                 width: 50%;
             }
 
-            #bottom-section>.gallery {
-                margin: 10px 45px;
-                background-color: #fff;
+            #content-section2 #article5 {
+                display: none;
             }
 
-            #bottom-section>.gallery>div {
-                width: calc(100%/4);
-                margin-right: 30px;
-                background-color: rgb(172, 180, 228);
-            }
-
-            #bottom-section>.gallery>div:nth-child(4) {
+            #content-section3>article:nth-child(4) {
                 display: none;
             }
         }
 
         @media (max-width:768px) {
 
-            #mid-section>.m-article1,
-            #mid-section>.m-article2 {
+            #content-section2 #article3,
+            #content-section2 #article4 {
                 width: 100%;
                 height: 100px;
             }
@@ -150,19 +141,21 @@
 
         @media (max-width:480px) {
 
-            #top-section>.left-menu,
-            #top-section>.r-article1,
-            #top-section>.r-article2 {
+            #content-section1 #nav1,
+            #content-section1 #article1,
+            #content-section1 #article2 {
                 width: 100%;
                 height: 100px;
             }
 
-            #bottom-section {
-                height: 565px;
+            #content-section3 {
+                height: 500px;
+                /* 세로정렬 */
+                flex-flow: column nowrap;
             }
 
-            #bottom-section>.gallery>div {
-                width: calc(90%);
+            #content-section3 .gallery-item {
+                width: 90%;
             }
         }
     </style>
@@ -170,27 +163,25 @@
 
 <body>
     <div id="wrap">
-        <header>header</header>
-        <section id="top-banner-section">top-banner</section>
-        <section id="top-section">
-            <aside class="left-menu">left-menu</aside>
-            <article class="r-article1">right article1</article>
-            <article class="r-article2">right article2</article>
+        <header id="header">header</header>
+        <section id="banner-section">banner</section>
+        <section id="content-section1">
+            <nav id="nav1">nav</nav>
+            <article id="article1">article1</article>
+            <article id="article2">article2</article>
         </section>
-        <section id="mid-section">
-            <article class="m-article1">middle article1</article>
-            <article class="m-article2">middle article2</article>
-            <article class="m-article3">middle article3</article>
+        <section id="content-section2">
+            <article id="article3">article3</article>
+            <article id="article4">article4</article>
+            <article id="article5">article5</article>
         </section>
-        <section id="bottom-section">
-            <article class="gallery">
-                <div>gallery1</div>
-                <div>gallery2</div>
-                <div>gallery3</div>
-                <div>gallery4</div>
-            </article>
+        <section id="content-section3">
+            <article class="gallery-item">gallery1</article>
+            <article class="gallery-item">gallery2</article>
+            <article class="gallery-item">gallery3</article>
+            <article class="gallery-item">gallery4</article>
         </section>
-        <footer>footer</footer>
+        <footer id="footer">footer</footer>
     </div>
 </body>
 
