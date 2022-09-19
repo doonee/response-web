@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 outliner - naver.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #wrap #out-sider {}
+
+        #header {}
+
+        #header #header1 {
+            position: relative;
+            height: 160px;
+            background-color: #fff;
+            border-bottom: 1px solid #e4e8eb;
+            /* background-color: rgb(94, 64, 64); */
+        }
+
+        #header #header1 #logo {
+            position: relative;
+            display: inline;
+            top: 30%;
+        }
+
+        #header #header1 #logo img {
+            position: absolute;
+            width: 222px;
+            border: 0;
+        }
+
+        #header #header1 #search-box {
+            position: absolute;
+            display: inline;
+            top: 38%;
+            left: 240px;
+        }
+
+        #header #header1 #search-box #search-box1 {
+            position: relative;
+            width: 582px;
+            height: 52px;
+            border: 2px solid #19ce60;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        #header #header1 #search-box .btn_submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 56px;
+            background-color: #19ce60;
+            -webkit-border-radius: 0 2px 2px 0;
+            border-radius: 0 2px 2px 0;
+            cursor: pointer;
+        }
+
+        #header #header1 #service-links {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-top: 10px;
+            font-size: 9pt;
+        }
+
+        #header #nav1 {
+            height: 52px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgb(230, 224, 224);
+        }
+
+        #header #nav1 #nav-links {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        #header #nav1 #nav-links ul {
+            float: left;
+        }
+
+        #header #nav1 #nav-links ul li,
+        #header #nav1 #nav-links select {
+            float: left;
+            list-style: none;
+            font-size: 15px;
+            line-height: 30px;
+            font-weight: 700;
+            margin-right: 5px;
+            padding: 5px;
+            border: 1px solid rgb(60, 98, 83);
+            border-radius: 5px;
+        }
+
+        #header #nav1 #weather-link {}
+
+        #header #nav1 #weather-link a {
+            display: flex;
+            justify-content: right;
+        }
+
+        #header #nav1 #weather-link a div {
+            display: inline;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        #container {
+            clear: both;
+        }
+
+        #footer {}
+
+        @media (max-width:1240px) {
+            #wrap {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            #wrap #out-sider {
+                padding: 0 15px;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="out-side">
+            <div id="header">
+                <header id="header1">
+                    <article id="logo">
+                        <img src="./naver.png" />
+                    </article>
+                    <article id="search-box">
+                        <input type="text" id="search-box1" />
+                        <button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit"
+                            onclick="window.nclick(this,'sch.action','','',event);" style="">
+                            <span class="blind">검색</span>
+                            <span class="ico_search_submit"></span>
+                        </button>
+                    </article>
+                    <aside id="service-links">
+                        <a href=#>두니넷을 시작페이지로</a>
+                    </aside>
+                </header>
+                <nav id="nav1">
+                    <aside id="nav-links">
+                        <ul>
+                            <li class="nav_item">
+                                <a href="https://mail.naver.com/" class="nav" data-clk="svc.mail"><i
+                                        class="ico_mail"></i>메일</a>
+                            </li>
+                            <li class="nav_item"><a href="https://section.cafe.naver.com/" class="nav"
+                                    data-clk="svc.cafe">카페</a></li>
+                            <li class="nav_item"><a href="https://section.blog.naver.com/" class="nav"
+                                    data-clk="svc.blog">블로그</a></li>
+                            <li class="nav_item"><a href="https://kin.naver.com/" class="nav"
+                                    data-clk="svc.kin">지식iN</a>
+                            </li>
+                            <li class="nav_item"><a href="https://shopping.naver.com/" class="nav shop"
+                                    data-clk="svc.shopping"><span class="blind">쇼핑</span></a></li>
+                            <li class="nav_item"><a href="https://shoppinglive.naver.com/home" class="nav shoplive"
+                                    data-clk="svc.shoppinglive"><span class="blind">쇼핑LIVE</span></a></li>
+                            <li class="nav_item"><a href="https://order.pay.naver.com/home" class="nav"
+                                    data-clk="svc.pay">Pay</a></li>
+                            <li class="nav_item">
+                                <a href="https://tv.naver.com/" class="nav" data-clk="svc.tvcast"><i
+                                        class="ico_tv"></i>TV</a>
+                            </li>
+                        </ul>
+                        <ul class="list_nav NM_FAVORITE_LIST">
+                            <li class="nav_item"><a href="https://dict.naver.com/" class="nav" data-clk="svc.dic">사전</a>
+                            </li>
+                            <li class="nav_item"><a href="https://news.naver.com/" class="nav"
+                                    data-clk="svc.news">뉴스</a>
+                            </li>
+                            <li class="nav_item"><a href="https://finance.naver.com/" class="nav"
+                                    data-clk="svc.stock">증권</a></li>
+                            <li class="nav_item"><a href="https://land.naver.com/" class="nav"
+                                    data-clk="svc.land">부동산</a>
+                            </li>
+                            <li class="nav_item"><a href="https://map.naver.com/" class="nav" data-clk="svc.map">지도</a>
+                            </li>
+                            <li class="nav_item"><a href="https://vibe.naver.com/" class="nav"
+                                    data-clk="svc.vibe">VIBE</a>
+                            </li>
+                            <li class="nav_item"><a href="https://search.shopping.naver.com/book/home" class="nav"
+                                    data-clk="svc.book">도서</a></li>
+                            <li class="nav_item"><a href="https://comic.naver.com/" class="nav"
+                                    data-clk="svc.webtoon">웹툰</a></li>
+
+                        </ul>
+                        <select>
+                            <option>더보기</option>
+                            <option>옵션1</option>
+                            <option>옵션2</option>
+                        </select>
+                    </aside>
+                    <aside id="weather-link">
+                        <div style="width: 270px;">
+                            <a data-clk="squ.weat" href="https://weather.naver.com/today/WDJPN00047"
+                                class="weather_area ico_w07">
+                                <div class="current_box">
+                                    <strong class="current" aria-label="현재기온">27.0°</strong><strong
+                                        class="state">흐림</strong>
+                                </div>
+                                <div class="degree_box">
+                                    <span class="min" aria-label="최저기온">28.0°</span><span class="max"
+                                        aria-label="최고기온">28.0°</span>
+                                </div>
+                                <span class="location">도쿄</span>
+                            </a>
+                        </div>
+                    </aside>
+                </nav>
+            </div>
+            <div id="container">
+                <h2>container</h2>
+                <section id="left-section">
+                    <h3>left section</h3>
+                    <article id="news-stand">
+                        <h4>news stand</h4>
+                    </article>
+                    <article id="main-contents">
+                        <h4>main contents</h4>
+                    </article>
+                </section>
+                <section id="right-section">
+                    <h3>right section</h3>
+                    <aside id="account">
+                        <h4>account</h4>
+                    </aside>
+                </section>
+            </div>
+            <div id="footer">
+                <h2>footer</h2>
+                <section id="footer-container">
+                    <h3>footer container</h3>
+                    <article id="footer-notice">
+                        <h4>footer notice</h4>
+                    </article>
+                    <nav id="footer-nav">
+                        <h4>footer nav</h4>
+                    </nav>
+                    <article id="footer-corp">
+                        <h4>footer corp</h4>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
